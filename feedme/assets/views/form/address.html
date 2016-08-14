@@ -3,25 +3,25 @@
     <div class="inputs col-xs-10 col-xs-offset-1">
         <label for="firstname">FIRST NAME</label>
         <div class="input-group col-xs-12">
-            <input type="text" id="firstname" class="input col-xs-12" placeholder="First Name"><br>
+            <input type="text" id="firstname" class="input col-xs-12" placeholder="First Name" ng-model="order.first"><br>
         </div>
         <div class="input-group col-xs-12">
             <label for="surname">SURENAME</label>
-            <input type="text" id="surname" class="input col-xs-12" placeholder="Surname"><br>
+            <input type="text" id="surname" class="input col-xs-12" placeholder="Surname" ng-model="order.last"><br>
         </div>
         <label for="street">Street/NO</label>
         <div class="input-group col-xs-12">
-            <input type="text" id="street" class="input col-xs-9 m-r street" placeholder="Street">
-            <input type="text" id="no" class="input col-xs-2 no" placeholder="No.">
+            <input type="text" id="street" class="input col-xs-9 m-r street" placeholder="Street" ng-model="order.street">
+            <input type="text" id="no" class="input col-xs-2 no" placeholder="No." ng-model="order.no">
         </div>
         <label for="street">POSTCODE/CITY</label>
         <div class="input-group col-xs-12">
-            <input type="text" id="post" class="input col-xs-3 m-r postcode" placeholder="Postcode">
-            <input type="text" id="city" class="input col-xs-8 city" placeholder="City">
+            <input type="text" id="post" class="input col-xs-3 m-r postcode" placeholder="Postcode" ng-model="order.postcode">
+            <input type="text" id="city" class="input col-xs-8 city" placeholder="City" ng-model="order.city">
         </div>
     </div>
 </div>
 <div class="form_end col-xs-12">
     <span id="back" class="col-xs-2" ui-sref="order.pizza">Back</span>
-    <button class="main-red-btn center-block" ui-sref="order.finish"><span class="call_to_action next">Next</span></button>
+    <button class="main-red-btn center-block" ui-sref="order.finish" ng-click="submit()"><span class="call_to_action next">Next</span></button>
 </div>

@@ -1,7 +1,18 @@
 app.controller('orderCtrl',['$scope', function ($scope) {
     $scope.order = {
+        first: '',
+        last: '',
+        street: '',
+        no: 0,
+        postcode: '',
+        city: '',
         size: '',
-        toppings: []
+        toppings: [],
+        cheese_rand: this.checked
+    };
+    
+    $scope.cancelOrder = function () {
+        this.order = {};
     };
     /**
      * Get the clicked pizza size
@@ -13,11 +24,10 @@ app.controller('orderCtrl',['$scope', function ($scope) {
         var clicked = $event.currentTarget;
         $('.sizes').removeClass('selected');
         $(clicked).addClass('selected');
-
         this.order.size = $(clicked).data('size');
     };
     
-    $scope.toppings = [
+    $scope.toppingsOpt = [
         {name: 'Tomato Sauce', letter: 'X'},
         {name: 'Mozarella Cheese', letter: 'C'},
         {name: 'Mushrooms', letter: 'M'},
@@ -29,7 +39,12 @@ app.controller('orderCtrl',['$scope', function ($scope) {
     $scope.selectIngredients = function ($event) {
         var selected = $( "select option:selected" );
         this.order.toppings.push($(selected).val());
+        selected.remove();
         $('.selected_opt').append('<li data-val="'+$(selected).val()+'"><span>'+$(selected).text()+'</span><span class="delete"></span></li>');
+    };
+    
+    $scope.submit = function () {
+        console.log(this.order);  
     };
     
     $(document).on('click', '.delete', function (e) {

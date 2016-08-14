@@ -75,7 +75,6 @@ nav {
 }
 
 .size_options {
-    display: inline-block;
     margin-top: 20px;
     margin-bottom: 20px;
     padding:0;
@@ -86,10 +85,10 @@ nav {
     text-align: center;
 }
 
-.sizes:nth-child(3) {
+.sizes:nth-child(2) {
     padding: 22px 25px;
 }
-.sizes:nth-child(4) {
+.sizes:nth-child(3) {
     padding: 33px 35px;
 }
 
@@ -102,7 +101,7 @@ nav {
 }
 
 .selector {
-    padding: 0 15%;
+    padding: 0 20%;
     margin-bottom: 40px;
 }
 
