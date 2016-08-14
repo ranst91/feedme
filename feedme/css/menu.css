@@ -14,6 +14,10 @@ nav {
     margin-bottom: 5px;
 }
 
+personal, overview {
+    display: none;
+}
+
 a, h1, h2, h3, h4, h5, h6, p, .order-btn span, .steps, .dialog span {
     font-family: 'PT Sans', sans-serif;
     color: white;

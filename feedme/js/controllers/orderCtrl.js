@@ -1,17 +1,18 @@
 app.controller('orderCtrl',['$scope', function ($scope) {
-    $scope.greet = 'hi';
-    $scope.fs = function(){
-        console.log(food_specification);
-    };
+    $scope.food = 'food';
+    $scope.page = ['food', 'personal', 'overview'];
+    // $scope.next = function (c,n) {
+    //     var current = '.'+c;
+    //     $('.dialog').html('<adress></adress>');
+    // }
 }]);
 
-
-var food_specification = app.directive('food', function () {
+app.directive('food', function () {
     return {
         templateUrl: './assets/views/form/food.html'
     }
 });
-app.directive('address', function () {
+app.directive('personal', function () {
     return {
         templateUrl: './assets/views/form/address.html'
     }

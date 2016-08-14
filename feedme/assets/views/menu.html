@@ -1,7 +1,7 @@
 <nav class="navbar">
     <div class="container-fluid">
         <div class="navbar-logo">
-            <img src="assets/logo/feedme_logo_white.svg">
+            <img src="assets/logo/feedme_logo_white.png">
         </div>
         <div class="navbar-header">
             <a class="navbar-brand" href="#">feed.me</a>
@@ -11,7 +11,7 @@
                 <li><a href="#">OVERVIEW</a></li>
                 <li><a href="#">TODAY'S MEAL</a></li>
                 <li><a href="#">MORE</a></li>
-                <li id="order-red"><a href="#/order">ORDER TODAY'S MEAL</a></li>
+                <li id="order-red"><a ui-sref="order.pizza">ORDER TODAY'S MEAL</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
@@ -25,7 +25,7 @@
         </div>
     </div>
     <div class="row order_btn_row">
-        <button class="main-red-btn center-block" ng-click="order()"><span class="call_to_action menu">Order Today's Meal</span></button>
+        <button class="main-red-btn center-block" ui-sref="order.pizza"><span class="call_to_action menu">Order Today's Meal</span></button>
     </div>
     <div class="row bottom">
         <h3>Check out our meal for tomorrow.</h3>
