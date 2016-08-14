@@ -1,24 +1,29 @@
 <h1>Your order</h1>
-<div class="size_options col-md-8 col-md-offset-2">
+<div class="size_options col-xs-offset-3">
     <h4>Choose pizza size in cm</h4>
-    <div class="sizes" data-size="20"><span>20</span></div>
-    <div class="sizes selected" data-size="30"><span>30</span></div>
-    <div class="sizes" data-size="40"><span>40</span></div>
+    <div class="sizes" data-size="20" ng-click="sizeSelect($event)"><span>20</span></div>
+    <div class="sizes" data-size="30" ng-click="sizeSelect($event)"><span>30</span></div>
+    <div class="sizes" data-size="40" ng-click="sizeSelect($event)"><span>40</span></div>
 </div>
 <div class="selector col-xs-12">
     <h4>Ingredients:</h4>
     <select class="col-xs-10">
-        <option id="def_opt" value="" disabled selected>Choose ingerdients</option>
-        <option>Sauce</option>
+        <option id="def_opt" value="0" disabled selected>Choose ingerdients</option>
+        <option ng-repeat="option in toppings" value="{{option.letter}}">{{option.name}}</option>
     </select>
-    <button class="col-xs-1"><img src="assets/icons/add_icon.svg"></button>
+    <button class="col-xs-1" ng-click="selectIngredients($event)"><img src="assets/icons/add_icon.svg"></button>
     <ul class="selected_opt">
-        <li data-ing=""><span>Tomato Sauce</span></li>
+        <li data-val="" class="topping"><span>asfda</span></li>
     </ul>
 </div>
-<div class="yn_selector col-md-4 col-md-offset-4">
-    <input type="checkbox" name="cheese-rand" checked class="bootstrap-switch">
+<h4>Cheese rand?</h4>
+<div class="col-xs-2 col-xs-offset-5 m-b">
+    <label class="switch">
+        <input type="checkbox" name="cheese-rand" checked>
+    <div class="slider"></div>
+</label>
 </div>
+
 <div class="form_end col-xs-12">
     <span id="back" class="col-xs-2">Back</span>
     <button class="main-red-btn center-block" ui-sref="order.address"><span class="call_to_action next">Next</span></button>
