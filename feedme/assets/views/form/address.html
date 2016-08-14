@@ -1,27 +1,60 @@
 <div class="form_body col-xs-10 col-xs-offset-1">
     <h1>Delivery Address</h1>
     <div class="inputs col-xs-10 col-xs-offset-1">
+        <!--Error messages-->
+        <div class="help-block" ng-messages="orderForm.$error" ng-if="orderForm.$invalid && orderForm.city.$touched">
+            <p class="error" ng-message="minlength">Your input is too short.</p>
+            <p class="error" ng-message="maxlength">Your input Name is too long.</p>
+            <p class="error" ng-message="pattern">Only letters for name, street and city<br>& Only numbers for street number & postcode.</p>
+            <p class="error" ng-message="required">Required field is empty.</p>
+        </div>
+        
+        <!--The firstname input-->
         <label for="firstname">FIRST NAME</label>
         <div class="input-group col-xs-12">
-            <input type="text" id="firstname" class="input col-xs-12" placeholder="First Name" ng-model="order.first"><br>
+            <input type="text" id="firstname" name="first" class="input col-xs-12" placeholder="First Name" ng-model="order.first" 
+                   required ng-minlength="3" ng-maxlength="25" ng-pattern="regex.letters" 
+                   ng-class="{ 'has-error': orderForm.city.$touched && orderForm.city.$invalid }"><br>
         </div>
+        
         <div class="input-group col-xs-12">
+            <!--The surname input-->
             <label for="surname">SURENAME</label>
-            <input type="text" id="surname" class="input col-xs-12" placeholder="Surname" ng-model="order.last"><br>
+            <input type="text" id="surname" name="last" class="input col-xs-12" placeholder="Surname" ng-model="order.last" 
+                   required ng-minlength="3" ng-maxlength="25" ng-pattern="regex.letters" 
+                   ng-class="{ 'has-error': orderForm.city.$touched && orderForm.city.$invalid }"><br>
         </div>
+        
         <label for="street">Street/NO</label>
         <div class="input-group col-xs-12">
-            <input type="text" id="street" class="input col-xs-9 m-r street" placeholder="Street" ng-model="order.street">
-            <input type="text" id="no" class="input col-xs-2 no" placeholder="No." ng-model="order.no">
+            <!--The street input-->
+            <input type="text" id="street" name="street" class="input col-xs-9 m-r street" placeholder="Street" ng-model="order.street" 
+                   required ng-minlength="3" ng-maxlength="25" ng-pattern="regex.letters"
+                   ng-class="{ 'has-error': orderForm.city.$touched && orderForm.city.$invalid }">
+            
+            <!--The street number input-->
+            <input type="text" id="no" name="no" class="input col-xs-2 no" placeholder="No." ng-model="order.no" 
+                   required ng-pattern="regex.numbers"
+                   ng-class="{ 'has-error': orderForm.city.$touched && orderForm.city.$invalid }">
+            <!--Error messages-->
+
         </div>
+        
         <label for="street">POSTCODE/CITY</label>
         <div class="input-group col-xs-12">
-            <input type="text" id="post" class="input col-xs-3 m-r postcode" placeholder="Postcode" ng-model="order.postcode">
-            <input type="text" id="city" class="input col-xs-8 city" placeholder="City" ng-model="order.city">
+            <!--The postcode input-->
+            <input type="text" id="post" name="postcode" class="input col-xs-3 m-r postcode" placeholder="Postcode" ng-model="order.postcode" 
+                   required ng-pattern="regex.numbers"
+                   ng-class="{ 'has-error': orderForm.city.$touched && orderForm.city.$invalid }">
+
+            <!--The city input-->
+            <input type="text" id="city" name="city" class="input col-xs-8 city" placeholder="City" ng-model="order.city" 
+                   required ng-minlength="3" ng-maxlength="25" ng-pattern="regex.letters"
+                   ng-class="{ 'has-error': orderForm.city.$touched && orderForm.city.$invalid }">
         </div>
     </div>
 </div>
 <div class="form_end col-xs-12">
     <span id="back" class="col-xs-2" ui-sref="order.pizza">Back</span>
-    <button class="main-red-btn center-block" ui-sref="order.finish" ng-click="submit()"><span class="call_to_action next">Next</span></button>
+    <button class="main-red-btn center-block" name="submit" ui-sref="order.finish" ng-disabled="orderForm.$invalid" ng-click="submit()"><span class="call_to_action next">Next</span></button>
 </div>

@@ -3,13 +3,14 @@ app.controller('orderCtrl',['$scope', function ($scope) {
         first: '',
         last: '',
         street: '',
-        no: 0,
+        no: '',
         postcode: '',
         city: '',
         size: '',
         toppings: [],
         cheese_rand: this.checked
     };
+    $scope.regex = {numbers: '^[0-9]+$', letters: '^[a-zA-Z]+$'};
     
     $scope.cancelOrder = function () {
         this.order = {};
@@ -44,7 +45,9 @@ app.controller('orderCtrl',['$scope', function ($scope) {
     };
     
     $scope.submit = function () {
-        console.log(this.order);  
+        if ($scope.orderForm.$valid){
+            console.log(this.order);
+        }
     };
     
     $(document).on('click', '.delete', function (e) {

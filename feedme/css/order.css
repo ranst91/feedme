@@ -281,3 +281,16 @@ p {
     font-weight: 400;
     font-size: 1.5rem;
 }
+
+button:disabled {
+    background-color: #c3c3c3;
+    border-color: #9b9b9b;
+}
+
+.has-error {
+    border-color: #ff5a5f;
+}
+
+.error {
+    color: #ff5a5f;
+}

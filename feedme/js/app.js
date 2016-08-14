@@ -1,4 +1,4 @@
-var app = angular.module('feedme', ['ui.router']);
+var app = angular.module('feedme', ['ui.router', 'ngMessages']);
 
 app.config(function($stateProvider, $urlRouterProvider) {
     //
