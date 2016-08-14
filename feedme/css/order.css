@@ -1,0 +1,278 @@
+body {
+    height: 100%;
+    font-family: 'PT Sans', sans-serif;
+}
+
+nav {
+    background-color: rgba(255,255,255,1);
+}
+
+.steps {
+    color: #b9b9b9;
+    padding: 0;
+    margin: 15px;
+}
+
+.navbar-brand {
+    color: black;
+}
+
+#cancel a{
+    color: white;
+}
+
+#cancel {
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    margin: 0 0 0 10px;
+    background-color: #ff5a5f;
+}
+
+#cancel:before {
+    position: relative;
+    top: 2px;
+    margin-right: 15px;
+    content: " ";
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: url("../assets/icons/cancel_icon.png") no-repeat center bottom;
+}
+
+.active {
+    color: black;
+    border-bottom: 2px solid #ff5a5f;
+}
+
+.arrow {
+    color: currentColor;
+}
+
+.dialog {
+    padding: 0;
+    margin-top: 5%;
+    background-color: white;
+}
+
+form {
+    overflow: hidden;
+}
+
+.form_body {
+    padding: 10px;
+}
+
+.dialog h1,.dialog h2,.dialog h4, .sizes span, label {
+    color: #5f5f5f;
+}
+
+/*Food preferences section*/
+
+.sizes {
+    display: inline-block;
+    border-radius: 50px;
+    border: 3px solid #e3e3e3;
+    padding: 13px 15px;
+    margin: 0 2.5%;
+}
+
+.size_options {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.sizes span {
+    font-size: 1.6rem;
+}
+
+.sizes:nth-child(3) {
+    padding: 22px 25px;
+}
+.sizes:nth-child(4) {
+    padding: 33px 35px;
+}
+
+.size_options .selected {
+    background-color: #ff5a5f;
+}
+
+.size_options .selected span {
+    color: white;
+}
+
+.selector select {
+    font-weight: 400;
+    margin-right: 1%;
+    border: 1px solid #e3e3e3;
+    background-color: #f7f7f7;
+    color: #8a8a8a;
+    padding: 14px;
+}
+
+.selector button {
+    background-color: #f0ad4e;
+    padding: 15px;
+    border: none;
+    width: 12%;
+}
+
+.selected_opt {
+    list-style: none;
+    padding: 0;
+    margin: 5px 0;
+}
+
+.selected_opt li {
+    display: inline-block;
+    background-color: #feefd9;
+    padding: 3px 5px;
+    margin: 5px 5px 5px 0;
+}
+
+.selected_opt li span{
+    font-weight: 400;
+    color: #a3a3a3;
+}
+
+.selected_opt li span:after{
+    position: relative;
+    margin-left: 5px;
+    content: " ";
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background: url("../assets/icons/cancel_small.png") no-repeat center bottom;
+}
+
+.yn_selector input{
+    
+}
+
+.form_end {
+    border-top: 2px solid #f5f5f5;
+    padding: 20px 0;
+}
+
+#back {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    color: #878787;
+    padding: 15px;
+}
+
+#back:before {
+    position: relative;
+    top: 0;
+    margin-right: 10px;
+    margin-left: 5px;
+    content: " ";
+    display: inline-block;
+    width: 18px;
+    height: 12px;
+    background: url("../assets/icons/back_arrow.png") no-repeat center bottom;
+}
+
+.main-red-btn {
+    padding: 10px 15px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.call_to_action {
+    color: white;
+}
+
+.next:after {
+    position: relative;
+    top: 0;
+    margin-left: 15px;
+    content: " ";
+    display: inline-block;
+    width: 18px;
+    height: 12px;
+    background: url("../assets/icons/next_icon.png") no-repeat center bottom;
+}
+/*------------------------------*/
+
+/*address details section*/
+.input {
+    border: 2px solid #e3e3e3;
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin: 0px 0;
+}
+
+.inputs {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+ .m-r {
+     margin-right: 1%;
+ }
+ 
+ .street {
+     width: 80%
+ }
+ 
+ .no {
+     width:19%;
+     text-align: center;
+ }
+
+.postcode {
+    width:29%;
+    text-align: center;
+}
+
+.city {
+    width:70%;
+}
+
+.input-group {
+    margin-bottom: 10px;
+}
+
+/*-----------------------*/
+
+/*Details section*/
+h4, h1 {
+    text-align: center;
+    margin-top: 40px;
+}
+
+table {
+    margin: 15px 0;
+}
+
+td {
+    font-weight: 400;
+    color: #5f5f5f;
+    font-size: 1.5rem;
+    text-align: right;
+}
+.cat {
+    font-weight: 700;
+    color: #5f5f5f;
+    font-size: 1.7rem;
+}
+
+.left-col {
+    text-align: left;
+}
+
+.address_details {
+    padding: 20px 0;
+}
+
+.address_details h4 {
+    margin: 25px;
+}
+
+p {
+    text-align: center;
+    color: #5f5f5f;
+    font-weight: 400;
+    font-size: 1.5rem;
+}
