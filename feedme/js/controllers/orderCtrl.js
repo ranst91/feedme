@@ -26,6 +26,7 @@ app.controller('orderCtrl',['$scope', function ($scope) {
         $('.sizes').removeClass('selected');
         $(clicked).addClass('selected');
         this.order.size = $(clicked).data('size');
+        $('button').prop('disabled', false);
     };
     
     $scope.toppingsOpt = [
@@ -49,7 +50,11 @@ app.controller('orderCtrl',['$scope', function ($scope) {
             console.log(this.order);
         }
     };
-    
+
+    /**
+     * Function to remove toppings from array & view
+     * On click on the topping's "X" button
+     */
     $(document).on('click', '.delete', function (e) {
         var clicked = $(e.currentTarget).parent();
         var i = $scope.order.toppings.indexOf(clicked.data('val'));
