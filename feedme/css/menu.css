@@ -66,6 +66,7 @@ h1, h3, h5 {
     font-size: 1.8rem;
     padding: 3px;
     line-height: 27px;
+    font-weight: 700;
 }
 
 .main-red-btn .menu:before {

@@ -9,7 +9,7 @@ app.controller('orderCtrl',['$scope', function ($scope) {
         size: '',
         toppings: []
     };
-    $scope.regex = {numbers: '^[0-9]+$', letters: '^[a-zA-Z]+$'};
+    $scope.regex = {numbers: '^[0-9]+$', letters: "^[a-z ,.'-]+$"};
     
     $scope.mark = function (step, boolean) {
         step = step.toUpperCase();
@@ -81,5 +81,4 @@ app.controller('orderCtrl',['$scope', function ($scope) {
         $scope.order.toppings.splice(i, 1);
         clicked.remove();
     });
-    // $("[name='cheese-rand']").bootstrapSwitch();
 }]);

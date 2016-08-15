@@ -30,6 +30,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
         .state('order.finish', {
             url: '/order/',
             templateUrl: "./assets/views/form/overview.html"
+        })
+        .state('success', {
+            url: '/success',
+            templateUrl: './assets/views/success.html',
+            params: {name: 'Costumer'},
+            controller: function($stateParams) {
+                console.log($stateParams.name);
+            }
         });
 });
 
