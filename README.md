@@ -9,9 +9,4 @@ It takes you through a flow of pizza order:
 
 
 Todo:
-- Get better regex patterns for:
-  - City: can include white space
-  - Postcode: Can include both numbers and letters
-  - Street: can include white space
-  
-- Update steps on navbar
+- Create the "thank you" page
