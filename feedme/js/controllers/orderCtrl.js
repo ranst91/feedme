@@ -9,14 +9,19 @@ app.controller('orderCtrl',['$scope', function ($scope) {
         size: '',
         toppings: []
     };
-    // $(document).on('change', '#cheese-rand', function(){
-    //     if ($scope.order.cheese_rand) 
-    //         $scope.order.cheese_rand = 'Yes';
-    //     else 
-    //         $scope.order.cheese_rand = 'No';
-    // });
-    
     $scope.regex = {numbers: '^[0-9]+$', letters: '^[a-zA-Z]+$'};
+    
+    $scope.mark = function (step, boolean) {
+        step = step.toUpperCase();
+        if (boolean == true) {
+            $('ul.nav li').removeClass('active');
+            $("li:contains("+step+")").addClass('active done');
+        }
+        else {
+            $('ul.nav li').removeClass('active');
+            $("li:contains("+step+")").addClass('active');
+        }
+    };
     
     $scope.cancelOrder = function () {
         this.order = {};

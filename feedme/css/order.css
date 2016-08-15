@@ -41,8 +41,10 @@ nav {
 }
 
 .active {
-    color: black;
     border-bottom: 2px solid #ff5a5f;
+}
+.done {
+    color: black;
 }
 
 .arrow {
