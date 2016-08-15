@@ -13,9 +13,11 @@ app.controller('orderCtrl',['$scope', function ($scope) {
     
     $scope.mark = function (step, boolean) {
         step = step.toUpperCase();
+        var arrow = $("li:contains("+step+")").prev().children().children().children();
         if (boolean == true) {
             $('ul.nav li').removeClass('active');
             $("li:contains("+step+")").addClass('active done');
+            arrow.addClass('arrow-done');
         }
         else {
             $('ul.nav li').removeClass('active');
@@ -62,6 +64,10 @@ app.controller('orderCtrl',['$scope', function ($scope) {
                 $scope.order.cheese_rand = 'Yes';
             else
                 $scope.order.cheese_rand = 'No';
+        }
+        
+        if ($scope.order.toppings.length<1){
+            $scope.order.toppings.push('None');
         }
     };
     

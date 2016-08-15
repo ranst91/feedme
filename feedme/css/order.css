@@ -47,8 +47,8 @@ nav {
     color: black;
 }
 
-.arrow {
-    color: currentColor;
+.arrow-done {
+    fill: #000;
 }
 
 .dialog {
