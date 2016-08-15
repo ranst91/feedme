@@ -294,3 +294,7 @@ button:disabled {
 .error {
     color: #ff5a5f;
 }
+
+.topping {
+    display: inline;
+}

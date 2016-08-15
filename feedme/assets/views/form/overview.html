@@ -7,21 +7,21 @@
                 <td class="cat left-col">Steinoffen-Pizza</td><td class="cat">Pizza size</td>
             </tr>
             <tr>
-                <td class="left-col">X1</td><td>20</td>
+                <td class="left-col">X1</td><td>{{order.size}}</td>
             </tr>
             <tr>
                 <td class="cat left-col">Ingredients</td><td class="cat">Cheese rand</td>
             </tr>
             <tr>
-                <td class="left-col">Someing</td><td>yes</td>
+                <td class="left-col topping" ng-repeat="topping in order.toppings">{{topping}},</td><td>{{order.cheese_rand}}</td>
             </tr>
         </table>
     </div>
     <div class="address_details col-xs-12">
         <h4>Devliery Address:</h4>
-        <p>Marcus Muller</p>
-        <p>Street No.</p>
-        <p>Postalcode Berlin</p>
+        <p>{{order.first}} {{order.last}}</p>
+        <p>{{order.street}} {{order.no}}</p>
+        <p>{{order.postcode}} {{order.city}}</p>
     </div>
 </div>
 <div class="form_end col-xs-12">

@@ -7,9 +7,15 @@ app.controller('orderCtrl',['$scope', function ($scope) {
         postcode: '',
         city: '',
         size: '',
-        toppings: [],
-        cheese_rand: this.checked
+        toppings: []
     };
+    // $(document).on('change', '#cheese-rand', function(){
+    //     if ($scope.order.cheese_rand) 
+    //         $scope.order.cheese_rand = 'Yes';
+    //     else 
+    //         $scope.order.cheese_rand = 'No';
+    // });
+    
     $scope.regex = {numbers: '^[0-9]+$', letters: '^[a-zA-Z]+$'};
     
     $scope.cancelOrder = function () {
@@ -44,13 +50,16 @@ app.controller('orderCtrl',['$scope', function ($scope) {
         selected.remove();
         $('.selected_opt').append('<li data-val="'+$(selected).val()+'"><span>'+$(selected).text()+'</span><span class="delete"></span></li>');
     };
-    
-    $scope.submit = function () {
+
+    $scope.process = function () {
         if ($scope.orderForm.$valid){
-            console.log(this.order);
+            if ($scope.order.cheese_rand)
+                $scope.order.cheese_rand = 'Yes';
+            else
+                $scope.order.cheese_rand = 'No';
         }
     };
-
+    
     /**
      * Function to remove toppings from array & view
      * On click on the topping's "X" button
@@ -61,5 +70,5 @@ app.controller('orderCtrl',['$scope', function ($scope) {
         $scope.order.toppings.splice(i, 1);
         clicked.remove();
     });
-    $("[name='cheese-rand']").bootstrapSwitch();
+    // $("[name='cheese-rand']").bootstrapSwitch();
 }]);
