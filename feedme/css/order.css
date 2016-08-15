@@ -298,3 +298,7 @@ button:disabled {
 .topping {
     display: inline;
 }
+
+[ng\:cloak], [ng-cloak], .ng-cloak, .dialog > form > .ng-cloak {
+    display: none !important;
+}

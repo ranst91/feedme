@@ -18,15 +18,17 @@ app.config(function($stateProvider, $urlRouterProvider) {
             controller: 'orderCtrl'
         })
         .state('order.pizza', {
-            url: "/order/food",
-            templateUrl: "./assets/views/form/food.html"
+            url: '/order/',
+            templateUrl: "./assets/views/form/food.html",
+            parent: 'order'
         })
         .state('order.address', {
-            url: "/order/address",
-            templateUrl: "./assets/views/form/address.html"
+            url: '/order/',
+            templateUrl: "./assets/views/form/address.html",
+            parent: 'order'
         })
         .state('order.finish', {
-            url: "/order/finish",
+            url: '/order/',
             templateUrl: "./assets/views/form/overview.html"
         });
 });
