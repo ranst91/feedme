@@ -8,8 +8,9 @@ body {
     background-color: #ffe99d;
 }
 
-h1 {
+h2 {
     margin: 0;
+    text-align: center;
 }
 
 #success {
@@ -21,7 +22,7 @@ h1 {
 }
 
 .dialog {
-    padding: 40px;
+    padding: 50px;
 }
 
 .main-red-btn {
