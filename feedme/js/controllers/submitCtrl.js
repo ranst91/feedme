@@ -1,7 +1,9 @@
-app.controller('submitCtrl',['$scope', '$state', function ($scope, $state) {
+app.controller('submitCtrl',['$scope', '$state', '$http', function ($scope, $state, $http) {
+    var data = JSON.stringify($scope.order);
     $scope.submit = function () {
-        //Call the api
-        //if true:
-        $state.go('success', {name: $scope.order.first});
+        $http.post("https://echo.getpostman.com/post", data)
+            .then(function(response) {
+                $state.go('success', {name: $scope.order.first});
+            });
     };
 }]);
