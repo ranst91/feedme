@@ -21,13 +21,16 @@ app.config(function($stateProvider, $urlRouterProvider) {
         })
         .state('order.food', {
             url: '',
-            templateUrl: "./assets/views/form/food.html"
+            templateUrl: "./assets/views/form/food.html",
+            controller: 'foodCtrl'
         })
         .state('order.address', {
-            templateUrl: "./assets/views/form/details.html"
+            templateUrl: "./assets/views/form/details.html",
+            controller: 'detailsCtrl'
         })
         .state('order.finish', {
-            templateUrl: "./assets/views/form/overview.html"
+            templateUrl: "./assets/views/form/overview.html",
+            controller: 'submitCtrl'
         })
         
         .state('success', {
@@ -46,26 +49,3 @@ app.filter('capitalize', function() {
         return (!!input) ? input.charAt(0).toUpperCase() + input.substr(1).toLowerCase() : '';
     }
 });
-
-
-
-
-
-// .state('order', {
-//     url: '/order',
-//     controller: 'orderCtrl',
-//     views: {
-//         '@': {
-//             templateUrl: './assets/views/order.html'
-//         },
-//         'food@order': {
-//             templateUrl: "./assets/views/form/food.html"
-//         },
-//         'details@order': {
-//             templateUrl: "./assets/views/form/details.html"
-//         },
-//         'overview@order': {
-//             templateUrl: "./assets/views/form/overview.html"
-//         }
-//     }
-// })
