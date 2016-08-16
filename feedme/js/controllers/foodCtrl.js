@@ -22,8 +22,15 @@ app.controller('foodCtrl',['$scope', function ($scope) {
         {name: 'Schinken', letter: 'H'}
     ];
 
-    $scope.selectIngredients = function ($event) {
+    /**
+     * This function takes selected topping for select menu
+     * and adds it to the selected toppings list
+     */
+    $scope.selectIngredients = function () {
         var selected = $( "select option:selected" );
+        if ($(selected).val() == 'Choose ingredients' || $('select option').length == 0) {
+            return; 
+        }
         this.order.toppings.push($(selected).val());
         selected.remove();
         $('.selected_opt').append('<li data-val="'+$(selected).val()+'"><span>'+$(selected).text()+'</span><span class="delete"></span></li>');
@@ -40,3 +47,9 @@ app.controller('foodCtrl',['$scope', function ($scope) {
         clicked.remove();
     });
 }]);
+
+app.directive('topping', function(topping_name) {
+    return {
+        template: 'Name: {{customer.name}} Address: {{customer.address}}'
+    };
+});
