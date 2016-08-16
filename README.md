@@ -10,3 +10,5 @@ It takes you through a flow of pizza order:
 
 Todo:
 - See if directives are required for dom manipulation
+- Perform responsive tests and adjustments
+- Perform functionality tests
