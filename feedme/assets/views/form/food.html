@@ -1,7 +1,7 @@
 <h1>Your order</h1>
 <div class="size_options">
-    <h4>Choose pizza size in cm</h4>
-    <div class="col-xs-offset-3">
+    <h4>* Choose pizza size in cm</h4>
+    <div class="size_selection">
         <div class="sizes" data-size="20" ng-click="sizeSelect($event)"><span>20</span></div>
         <div class="sizes" data-size="30" ng-click="sizeSelect($event)"><span>30</span></div>
         <div class="sizes" data-size="40" ng-click="sizeSelect($event)"><span>40</span></div>
@@ -10,10 +10,10 @@
 <div class="selector col-xs-12">
     <h4>Ingredients:</h4>
     <select class="col-xs-10">
-        <option id="def_opt" value="0" disabled selected>Choose ingerdients</option>
+        <option id="def_opt" value="0" disabled selected>Choose ingredients</option>
         <option ng-repeat="option in toppingsOpt" value="{{option.name}}">{{option.name}}</option>
     </select>
-    <button class="col-xs-1" ng-click="selectIngredients($event)"><img src="assets/icons/add_icon.svg"></button>
+    <button class="col-xs-1 add" ng-click="selectIngredients($event)"><img src="assets/icons/add_icon.svg"></button>
     <ul class="selected_opt">
     </ul>
 </div>
@@ -26,6 +26,6 @@
 </div>
 
 <div class="form_end col-xs-12">
-    <span id="back" class="col-xs-2" ui-sref="main">Back</span>
+    <span id="back" class="col-xs-2 back" ui-sref="main">Back</span>
     <button class="main-red-btn center-block" ui-sref="order.address" ng-click="mark('address', true)" disabled><span class="call_to_action next">Next</span></button>
 </div>

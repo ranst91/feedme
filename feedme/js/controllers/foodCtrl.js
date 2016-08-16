@@ -28,7 +28,7 @@ app.controller('foodCtrl',['$scope', function ($scope) {
      */
     $scope.selectIngredients = function () {
         var selected = $( "select option:selected" );
-        if ($(selected).val() == 'Choose ingredients' || $('select option').length == 0) {
+        if ($(selected).val() == 0 || $('select option').length == 0) {
             return; 
         }
         this.order.toppings.push($(selected).val());
