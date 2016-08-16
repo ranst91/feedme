@@ -9,5 +9,6 @@ It takes you through a flow of pizza order:
 
 
 Todo:
-- Disband order controller into few child controllers for each child of "order"
-- Create submit function to make an API call & pass costumer name to success page
+- See if directives are required for dom manipulation
+- Perform responsive tests and adjustments
+- Perform functionality tests
