@@ -1,15 +1,8 @@
 <h1>Your order</h1>
 <div class="size_options">
     <h4>* Choose pizza size in cm</h4>
-    <!--<div class="size_selection">-->
-        <!--<div class="sizes" data-size="20" ng-class="{'active':toggle}" ng-click="sizeSelect($event)"><span>20</span></div>-->
-        <!--<div class="sizes" data-size="30" ng-class="{'active':toggle}" ng-click="sizeSelect($event)"><span>30</span></div>-->
-        <!--<div class="sizes" data-size="40" ng-class="{'active':toggle}" ng-click="sizeSelect($event)"><span>40</span></div>-->
-    <!--</div>-->
     <div class="size_selection">
-        <div class="sizes" ng-repeat="size in availableSizes track by $index" ng-class="size.class" ng-click="sizeSelect($index)"><span>{{size.size}}</span></div>
-        <!--<div class="sizes" data-size="30" ng-class="{'active':toggle}" ng-click="sizeSelect($event)"><span>size.size</span></div>-->
-        <!--<div class="sizes" data-size="40" ng-class="{'active':toggle}" ng-click="sizeSelect($event)"><span>size.size</span></div>-->
+        <div class="sizes" ng-class="{selected: order.size == availableSizes[$index].size}" ng-repeat="size in availableSizes track by $index" ng-class="size.class" ng-click="sizeSelect($index)"><span>{{size.size}}</span></div>
     </div>
 </div>
 <div class="selector col-xs-12">
