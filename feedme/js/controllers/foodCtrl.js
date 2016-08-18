@@ -6,12 +6,9 @@ app.controller('foodCtrl',['$scope', function ($scope) {
      * @param $event
      */
     $scope.sizeSelect = function ($index) {
+        $('.sizes').removeClass('selected');
         $scope.availableSizes[$index].class = 'selected';
         $scope.order.size = $scope.availableSizes[$index].size;
-        // var clicked = $event.currentTarget;
-        // // $('.sizes').removeClass('selected');
-        // // $(clicked).addClass('selected');
-        // this.order.size = $(clicked).data('size');
         
         $('button').prop('disabled', false);
     };

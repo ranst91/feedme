@@ -7,6 +7,7 @@ app.controller('submitCtrl',['$scope', '$state', '$http', function ($scope, $sta
             },function (err) {
                 console.log(err);
             });
+        $state.go('success', {name: $scope.order.first});    
     };
-    $state.go('success', {name: $scope.order.first});
+    
 }]);

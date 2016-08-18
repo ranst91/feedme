@@ -112,6 +112,16 @@ select {
     -webkit-appearance: none;
 }
 
+/*select:before {*/
+    /*position: relative;*/
+    /*right: 0;*/
+    /*content: " ";*/
+    /*display: inline-block;*/
+    /*width: 14px;*/
+    /*height: 14px;*/
+    /*background: url("../assets/icons/dropdown_arrow.png") no-repeat center bottom;*/
+/*}*/
+
 .selector {
     padding: 0 20%;
     margin-bottom: 40px;

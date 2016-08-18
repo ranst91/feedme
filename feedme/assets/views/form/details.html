@@ -7,13 +7,13 @@
         <div class="input-group col-xs-12">
             <input type="text" id="firstname" name="first" class="input col-xs-12" placeholder="First Name" ng-model="order.first" 
                    required ng-pattern="regex.letters" ng-minlength="2" ng-maxlength="25"
-                   ng-class="{ 'has-error': orderForm.first.$touched && orderForm.first.$invalid }"><br>
+                   ng-class="{ 'has-error': orderForm.first.$dirty && orderForm.first.$invalid && orderForm.first.$touched }"><br>
         
         <!--Error messages-->
-        <div class="help-block" ng-messages="orderForm.first.$error" ng-if="orderForm.first.$invalid && orderForm.first.$touched">
-            <p class="error" ng-message="pattern">Your First Name contains special characters.</p>
-            <p class="error" ng-message="minlength">Your First Name is too short.</p>
-            <p class="error" ng-message="maxlength">Your First Name is too long.</p>
+        <div class="help-block" ng-messages="orderForm.first.$error" ng-if="orderForm.first.$invalid && orderForm.first.$dirty && orderForm.first.$touched">
+            <p class="error" ng-message="pattern">First Name contains special characters.</p>
+            <p class="error" ng-message="minlength">First Name is too short.</p>
+            <p class="error" ng-message="maxlength">First Name is too long.</p>
             <p class="error" ng-message="required">First Name is required.</p>
         </div>
         </div>
@@ -23,13 +23,13 @@
             <!--The surname input-->
             <input type="text" id="surname" name="last" class="input col-xs-12" placeholder="Surname" ng-model="order.last" 
                    required ng-minlength="2" ng-maxlength="25" ng-pattern="regex.letters"
-                   ng-class="{ 'has-error': orderForm.last.$touched && orderForm.last.$invalid }"><br>
+                   ng-class="{ 'has-error': orderForm.last.$dirty && orderForm.last.$invalid && orderForm.last.$touched }"><br>
         
         <!--Error messages-->
-        <div class="help-block" ng-messages="orderForm.last.$error" ng-if="orderForm.last.$invalid && orderForm.last.$touched">
-            <p class="error" ng-message="pattern">Your Surname contains special characters.</p>
-            <p class="error" ng-message="minlength">Your Surname is too short.</p>
-            <p class="error" ng-message="maxlength">Your Surname is too long.</p>
+        <div class="help-block" ng-messages="orderForm.last.$error" ng-if="orderForm.last.$invalid && orderForm.last.$dirty && orderForm.last.$touched">
+            <p class="error" ng-message="pattern">Surname contains special characters.</p>
+            <p class="error" ng-message="minlength">Surname is too short.</p>
+            <p class="error" ng-message="maxlength">Surname is too long.</p>
             <p class="error" ng-message="required">Surname is required.</p>
         </div>
         </div>
@@ -39,9 +39,9 @@
             <!--The street input-->
             <input type="text" id="street" name="street" class="input col-xs-9 m-r street" placeholder="Street" ng-model="order.street" 
                    required ng-minlength="3" ng-maxlength="25" ng-pattern="regex.letters"
-                   ng-class="{ 'has-error': orderForm.street.$touched && orderForm.street.$invalid }">
+                   ng-class="{ 'has-error': orderForm.street.$dirty && orderForm.street.$invalid && orderForm.street.$touched }">
             <!--Error messages-->
-            <div class="help-block" style="width:80%" ng-messages="orderForm.street.$error" ng-if="orderForm.street.$invalid && orderForm.street.$touched">
+            <div class="help-block" style="width:80%" ng-messages="orderForm.street.$error" ng-if="orderForm.street.$invalid && orderForm.street.$dirty && orderForm.street.$touched">
                 <p class="error" ng-message="pattern">Street name contains special characters.</p>
                 <p class="error" ng-message="minlength">Street name is too short.</p>
                 <p class="error" ng-message="maxlength">Street name is too long.</p>
@@ -51,9 +51,9 @@
             <!--The street number input-->
             <input type="text" id="no" name="no" class="input col-xs-2 no" placeholder="No." ng-model="order.no" 
                    required ng-pattern="regex.numbers"
-                   ng-class="{ 'has-error': orderForm.no.$touched && orderForm.no.$invalid }">
+                   ng-class="{ 'has-error': orderForm.no.$dirty && orderForm.no.$invalid && orderForm.no.$touched }">
             <!--Error messages-->
-            <div class="help-block only_num right" id="street_no_err" ng-messages="orderForm.no.$error" ng-if="orderForm.no.$invalid && orderForm.no.$touched">
+            <div class="help-block only_num right" id="street_no_err" ng-messages="orderForm.no.$error" ng-if="orderForm.no.$invalid && orderForm.no.$dirty && orderForm.no.$touched">
                 <p class="error" ng-message="required">Required.</p>
                 <p class="error" ng-message="pattern">Only numbers allowed.</p>
             </div>
@@ -64,9 +64,9 @@
             <!--The postcode input-->
             <input type="text" id="post" name="postcode" class="input col-xs-3 m-r postcode" placeholder="Postcode" ng-model="order.postcode" 
                    required ng-pattern="regex.numbers"
-                   ng-class="{ 'has-error': orderForm.postcode.$touched && orderForm.postcode.$invalid }">
+                   ng-class="{ 'has-error': orderForm.postcode.$dirty && orderForm.postcode.$invalid && orderForm.postcode.$touched }">
             <!--Error messages-->
-            <div class="help-block only_num" id="postcode_err" ng-messages="orderForm.postcode.$error" ng-if="orderForm.postcode.$invalid && orderForm.postcode.$touched">
+            <div class="help-block only_num" id="postcode_err" ng-messages="orderForm.postcode.$error" ng-if="orderForm.postcode.$invalid && orderForm.postcode.$dirty && orderForm.postcode.$touched">
                 <p class="error" ng-message="required">Required.</p>
                 <p class="error" ng-message="pattern">Only numbers allowed.</p>
             </div>
@@ -74,9 +74,9 @@
             <!--The city input-->
             <input type="text" id="city" name="city" class="input col-xs-8 city" placeholder="City" ng-model="order.city" 
                    required ng-minlength="3" ng-maxlength="25" ng-pattern="regex.letters"
-                   ng-class="{ 'has-error': orderForm.city.$touched && orderForm.city.$invalid }">
+                   ng-class="{ 'has-error': orderForm.city.$dirty && orderForm.city.$invalid && orderForm.city.$touched }">
             <!--Error messages-->
-            <div class="help-block right" style="width:70%" ng-messages="orderForm.city.$error" ng-if="orderForm.city.$invalid && orderForm.city.$touched">
+            <div class="help-block right" style="width:70%" ng-messages="orderForm.city.$error" ng-if="orderForm.city.$invalid && orderForm.city.$dirty && orderForm.city.$touched">
                 <p class="error" ng-message="pattern">City contains special characters.</p>
                 <p class="error" ng-message="minlength">City is too short.</p>
                 <p class="error" ng-message="maxlength">City is too long.</p>
