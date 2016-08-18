@@ -5,51 +5,43 @@ app.controller('foodCtrl',['$scope', function ($scope) {
      * Store the size selected in order's data
      * @param $event
      */
-    $scope.sizeSelect = function ($event) {
-        var clicked = $event.currentTarget;
-        $('.sizes').removeClass('selected');
-        $(clicked).addClass('selected');
-        this.order.size = $(clicked).data('size');
+    $scope.sizeSelect = function ($index) {
+        $scope.availableSizes[$index].class = 'selected';
+        $scope.order.size = $scope.availableSizes[$index].size;
+        // var clicked = $event.currentTarget;
+        // // $('.sizes').removeClass('selected');
+        // // $(clicked).addClass('selected');
+        // this.order.size = $(clicked).data('size');
+        
         $('button').prop('disabled', false);
     };
-
-    $scope.toppingsOpt = [
-        {name: 'Tomato Sauce', letter: 'X'},
-        {name: 'Mozarella Cheese', letter: 'C'},
-        {name: 'Mushrooms', letter: 'M'},
-        {name: 'Tomatos', letter: 'T'},
-        {name: 'Pepperoni', letter: 'P'},
-        {name: 'Schinken', letter: 'H'}
-    ];
 
     /**
      * This function takes selected topping for select menu
      * and adds it to the selected toppings list
      */
     $scope.selectIngredients = function () {
-        var selected = $( "select option:selected" );
-        if ($(selected).val() == 0 || $('select option').length == 0) {
-            return; 
+        if ($scope.toppingsOpt.length > 0 && $scope.selected != undefined) {
+            var current = $scope.toppingsOpt.indexOf($scope.selected);
+            $scope.toppingsOpt.splice(current, 1);
+            $scope.order.toppings.push($scope.selected);
+            $scope.selected = $scope.toppingsOpt[0];
+        } else {
+            return;
         }
-        this.order.toppings.push($(selected).val());
-        selected.remove();
-        $('.selected_opt').append('<li data-val="'+$(selected).val()+'"><span>'+$(selected).text()+'</span><span class="delete"></span></li>');
     };
 
     /**
      * Function to remove toppings from array & view
-     * On click on the topping's "X" button
+     * On click on the topping's "X" button:
+     *  Remove topping from order
+     *  Add it back to toppings options in select menu
      */
-    $(document).on('click', '.delete', function (e) {
-        var clicked = $(e.currentTarget).parent();
-        var i = $scope.order.toppings.indexOf(clicked.data('val'));
+    $scope.removeTopping = function ($event) {
+        var current = $event.target;
+        var topping = $(current).parent().data('val');
+        var i = $scope.order.toppings.indexOf(topping);
         $scope.order.toppings.splice(i, 1);
-        clicked.remove();
-    });
-}]);
-
-app.directive('topping', function(topping_name) {
-    return {
-        template: 'Name: {{customer.name}} Address: {{customer.address}}'
+        $scope.toppingsOpt.push(topping);
     };
-});
+}]);

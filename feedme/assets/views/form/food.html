@@ -1,20 +1,29 @@
 <h1>Your order</h1>
 <div class="size_options">
     <h4>* Choose pizza size in cm</h4>
+    <!--<div class="size_selection">-->
+        <!--<div class="sizes" data-size="20" ng-class="{'active':toggle}" ng-click="sizeSelect($event)"><span>20</span></div>-->
+        <!--<div class="sizes" data-size="30" ng-class="{'active':toggle}" ng-click="sizeSelect($event)"><span>30</span></div>-->
+        <!--<div class="sizes" data-size="40" ng-class="{'active':toggle}" ng-click="sizeSelect($event)"><span>40</span></div>-->
+    <!--</div>-->
     <div class="size_selection">
-        <div class="sizes" data-size="20" ng-click="sizeSelect($event)"><span>20</span></div>
-        <div class="sizes" data-size="30" ng-click="sizeSelect($event)"><span>30</span></div>
-        <div class="sizes" data-size="40" ng-click="sizeSelect($event)"><span>40</span></div>
+        <div class="sizes" ng-repeat="size in availableSizes track by $index" ng-class="size.class" ng-click="sizeSelect($index)"><span>{{size.size}}</span></div>
+        <!--<div class="sizes" data-size="30" ng-class="{'active':toggle}" ng-click="sizeSelect($event)"><span>size.size</span></div>-->
+        <!--<div class="sizes" data-size="40" ng-class="{'active':toggle}" ng-click="sizeSelect($event)"><span>size.size</span></div>-->
     </div>
 </div>
 <div class="selector col-xs-12">
     <h4>Ingredients:</h4>
-    <select class="col-xs-10">
-        <option id="def_opt" value="0" disabled selected>Choose ingredients</option>
-        <option ng-repeat="option in toppingsOpt" value="{{option.name}}">{{option.name}}</option>
+    <select class="col-xs-10" ng-model="selected">
+        <!--ng-options="topping as topping.name for topping in toppingsOpt track by $index" ng-model="selected"-->
+        <option id="def_opt" value="" disabled>Choose ingredients</option>
+        <option ng-repeat="option in toppingsOpt track by $index" value="{{option}}">{{option}}</option>
     </select>
-    <button class="col-xs-1 add" ng-click="selectIngredients($event)"><img src="assets/icons/add_icon.svg"></button>
+    <button class="col-xs-1 add" ng-click="selectIngredients($index)"><img src="assets/icons/add_icon.svg"></button>
     <ul class="selected_opt">
+        <li ng-repeat="topping in order.toppings" data-val="{{topping}}" ng-click="removeTopping($event)">
+            <span>{{topping}}</span><span class="delete"></span>
+        </li>
     </ul>
 </div>
 <h4>Cheese rand?</h4>
