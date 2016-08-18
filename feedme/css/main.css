@@ -2,11 +2,9 @@ html {
     background: url("../assets/ background-picture.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100%;
 }
 body {
     background-color: rgba(147, 147, 147, 0.5);
-    height: 100%;
 }
 
 nav {
@@ -49,10 +47,13 @@ h1, h3, h5 {
     background-color: #ff5a5f;
 }
 
+.order_btn_row {
+    padding-top: 10%;
+    padding-bottom: 25%;
+}
+
 .main-red-btn {
     background-color: #ff5a5f;
-    margin-top: 10%;
-    margin-bottom: 25%;
     padding: 20px 30px;
     border: none;
     border-bottom: 2px solid #ae4445;
@@ -87,12 +88,16 @@ h1, h3, h5 {
 }
 
 
-@media (max-width: 500px) {
-    .menu h3 {
-        line-height: 4rem;
-    }
+/*@media (min-width: 320px) {*/
 
-    .selector {
-        padding: 0;
-    }
-}
+/*}*/
+
+/*@media (min-width: 360px) {*/
+
+/*}*/
+/*@media (min-width: 414px) {*/
+
+/*}*/
+/*@media (min-width: 500px) {*/
+
+/*}*/
