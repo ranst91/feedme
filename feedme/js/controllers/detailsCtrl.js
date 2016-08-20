@@ -8,10 +8,6 @@ app.controller('detailsCtrl',['$scope', function ($scope) {
             else
                 $scope.order.cheese_rand = 'No';
         }
-
-        if ($scope.order.toppings.length<1){
-            $scope.order.toppings.push('None');
-        }
     };
 }]);
 

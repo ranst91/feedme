@@ -10,6 +10,10 @@ app.controller('foodCtrl',['$scope', function ($scope) {
         $('button').prop('disabled', false);
     };
 
+    if ($scope.order.size){
+        $('button').prop('disabled', false);
+    }
+
     /**
      * This function takes selected topping for select menu
      * and adds it to the selected toppings list

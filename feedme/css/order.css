@@ -112,16 +112,6 @@ select {
     -webkit-appearance: none;
 }
 
-/*select:before {*/
-    /*position: relative;*/
-    /*right: 0;*/
-    /*content: " ";*/
-    /*display: inline-block;*/
-    /*width: 14px;*/
-    /*height: 14px;*/
-    /*background: url("../assets/icons/dropdown_arrow.png") no-repeat center bottom;*/
-/*}*/
-
 .selector {
     padding: 0 20%;
     margin-bottom: 40px;
@@ -292,10 +282,12 @@ td {
     font-weight: 700;
     color: #5f5f5f;
     font-size: 1.7rem;
+    width: 30%;
 }
 
 .left-col {
     text-align: left;
+    width: 70%;
 }
 
 .address_details {
