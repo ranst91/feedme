@@ -9,6 +9,5 @@ It takes you through a flow of pizza order:
 
 
 Todo:
-- See if directives are required for dom manipulation
-- Perform responsive tests and adjustments
-- Perform functionality tests
+- Get the api request running (activate an already exist function)
+- Finalize
