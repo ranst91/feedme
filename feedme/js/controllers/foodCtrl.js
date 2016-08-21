@@ -1,3 +1,6 @@
+/**
+ * A controller for pizza menu form
+ */
 app.controller('foodCtrl',['$scope', function ($scope) {
     /**
      * Get the clicked pizza size
@@ -10,6 +13,9 @@ app.controller('foodCtrl',['$scope', function ($scope) {
         $('button').prop('disabled', false);
     };
 
+    /**
+     * If a pizza size is selected, a user may continue the the next form
+     */
     if ($scope.order.size){
         $('button').prop('disabled', false);
     }

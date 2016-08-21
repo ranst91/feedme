@@ -1,3 +1,10 @@
+/**
+ * The main "father controller" for the order flow.
+ * This controller is the uppermost scope of the order flow
+ * It is used to receive the order details from the child scopes.
+ * 
+ * It also hosts any function/variable which will be used throughout the order flow
+ */
 app.controller('orderCtrl',['$scope','$state', function ($scope, $state) {
     /**
      * The order:
@@ -24,6 +31,11 @@ app.controller('orderCtrl',['$scope','$state', function ($scope, $state) {
     $scope.availableSizes = [{size: 20, class: ''},{size: 30, class: ''},{size: 40, class: ''}];
     $scope.toppingsOpt = ['Tomato Sauce','Mozarella Cheese','Mushrooms','Tomatos','Pepperoni','Schinken'];
 
+    /**
+     * Used to mark the steps on the navigation bar
+     * @param step
+     * @param boolean
+     */
     $scope.mark = function (step, boolean) {
         step = step.toUpperCase();
         var arrow = $("li:contains("+step+")").prev().children().children().children();
@@ -37,7 +49,10 @@ app.controller('orderCtrl',['$scope','$state', function ($scope, $state) {
             $("li:contains("+step+")").addClass('active');
         }
     };
-    
+
+    /**
+     * Erases the entire order.
+     */
     $scope.cancelOrder = function () {
         this.order = {};
     };
