@@ -11,8 +11,3 @@ What did I use:
 Some bootstrap & media queries for the responsiveness.
 AngularJS Front end MVC framework
 ui-router for AngularJS
-
-
-Todo:
-- Get the api request running (activate an already exist function)
-- Finalize
